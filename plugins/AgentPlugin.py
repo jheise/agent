@@ -1,4 +1,4 @@
-class AgentPlugin():
+class AgentPlugin(object):
 	def __init__(self,name,*args,**kwargs):
 		self.name = name
 		self.status = "not started"
@@ -8,15 +8,9 @@ class AgentPlugin():
 
 	def perform(self):
 		pass
-	
-	def getStatus(self):
-		return self.status
-
-	def getResult(self):
-		return self.result
 
 if __name__ == "__main__":
 	plugin = AgentPlugin("testplugin","foobar","barbaz",foo="foo",bar="bar",baz="baz")
-	print "plugin status is %s" % plugin.getStatus()
+	print "plugin status is %s" % plugin.status
 	plugin.perform()
-	print "plugin status is %s" % plugin.getStatus()
+	print "plugin status is %s" % plugin.status
